@@ -47,6 +47,10 @@ print(stats.down.packets)
 print(stats.down.bytes)
 ```
 
+## Xcode / SPM integration
+- The prebuilt `HevSocks5Tunnel.xcframework` is now vendored in the repo with its own `module.modulemap` and public header, so SwiftPM will not auto-generate a `module.modulemap` at `include/module.modulemap`. This avoids the collision that happens when the app also depends on other binary targets such as `wg-go`.
+- If you updated from an older revision, clear DerivedData or `File > Packages > Reset Package Caches` in Xcode so it picks up the new artifact layout.
+
 ## Config
 ```yml
 tunnel:
@@ -67,8 +71,6 @@ misc:
   log-level: debug
   limit-nofile: 65535
 ```
-
-
 
 
 

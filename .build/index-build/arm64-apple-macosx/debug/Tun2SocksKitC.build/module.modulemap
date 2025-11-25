@@ -1,0 +1,4 @@
+module Tun2SocksKitC {
+    umbrella header "/Users/saqib/work/side/devinspect/iosvpn/Tun2SocksKit/Sources/Tun2SocksKitC/Tun2SocksKitC.h"
+    export *
+}

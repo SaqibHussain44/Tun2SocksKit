@@ -1,0 +1,31 @@
+{
+  "object" : {
+    "artifacts" : [
+      {
+        "kind" : {
+          "xcframework" : {
+
+          }
+        },
+        "packageRef" : {
+          "identity" : "tun2sockskit",
+          "kind" : "root",
+          "location" : "/Users/saqib/work/side/devinspect/iosvpn/Tun2SocksKit",
+          "name" : "Tun2SocksKit"
+        },
+        "path" : "/Users/saqib/work/side/devinspect/iosvpn/Tun2SocksKit/HevSocks5Tunnel.xcframework",
+        "source" : {
+          "type" : "local"
+        },
+        "targetName" : "HevSocks5Tunnel"
+      }
+    ],
+    "dependencies" : [
+
+    ],
+    "prebuilts" : [
+
+    ]
+  },
+  "version" : 7
+}

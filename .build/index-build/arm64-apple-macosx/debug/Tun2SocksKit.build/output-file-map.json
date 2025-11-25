@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/saqib/work/side/devinspect/iosvpn/Tun2SocksKit/.build/index-build/arm64-apple-macosx/debug/Tun2SocksKit.build/master.swiftdeps"
+  },
+  "/Users/saqib/work/side/devinspect/iosvpn/Tun2SocksKit/Sources/Tun2SocksKit/Tunnel.swift": {
+    "dependencies": "/Users/saqib/work/side/devinspect/iosvpn/Tun2SocksKit/.build/index-build/arm64-apple-macosx/debug/Tun2SocksKit.build/Tunnel.d",
+    "object": "/Users/saqib/work/side/devinspect/iosvpn/Tun2SocksKit/.build/index-build/arm64-apple-macosx/debug/Tun2SocksKit.build/Tunnel.swift.o",
+    "swiftmodule": "/Users/saqib/work/side/devinspect/iosvpn/Tun2SocksKit/.build/index-build/arm64-apple-macosx/debug/Tun2SocksKit.build/Tunnel~partial.swiftmodule",
+    "swift-dependencies": "/Users/saqib/work/side/devinspect/iosvpn/Tun2SocksKit/.build/index-build/arm64-apple-macosx/debug/Tun2SocksKit.build/Tunnel.swiftdeps",
+    "diagnostics": "/Users/saqib/work/side/devinspect/iosvpn/Tun2SocksKit/.build/index-build/arm64-apple-macosx/debug/Tun2SocksKit.build/Tunnel.dia"
+  }
+}
