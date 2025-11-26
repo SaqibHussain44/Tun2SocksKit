@@ -32,12 +32,15 @@ let package = Package(
        ]
     ),
     .target(
-            name: "HevSocks5TunnelC",
-            path: "Sources/HevSocks5TunnelC",
-            publicHeadersPath: "include",
-            cSettings: [
-                .headerSearchPath("include")
-            ]
-        )
+      name: "HevSocks5TunnelC",
+      path: "Sources/HevSocks5TunnelC",
+      publicHeadersPath: "include",
+      cSettings: [
+          .headerSearchPath("include")
+      ],
+      linkerSettings: [
+          .linkedLibrary("hev-socks5-tunnel")
+      ]
+    )
   ]
 )
