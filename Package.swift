@@ -15,18 +15,29 @@ let package = Package(
     )
   ],
   targets: [
+    // Swift-level tunnel wrapper
     .target(
-        name: "Tun2SocksKit",
-        dependencies: ["HevSocks5Tunnel", "Tun2SocksKitC"]
+       name: "Tun2SocksKit",
+       dependencies: ["Tun2SocksKitC"]
+    ),
+
+    // C wrapper + headers + the HevSocks5Tunnel C API
+    .target(
+       name: "Tun2SocksKitC",
+       path: "Sources/Tun2SocksKitC",
+       publicHeadersPath: ".",
+       cSettings: [
+           .headerSearchPath("."),
+           .headerSearchPath("../HevSocks5TunnelC/include"),
+       ]
     ),
     .target(
-        name: "Tun2SocksKitC",
-        publicHeadersPath: "."
-    ),
-    .binaryTarget(
-        name: "HevSocks5Tunnel",
-        url: "https://github.com/EbrahimTahernejad/Tun2SocksKit/releases/download/5.14.1/HevSocks5Tunnel.xcframework.zip",
-        checksum: "874f885c07bdbe272a504e3c1461a55bf86847ec6ce222d20c45d94d90796d4e"
-    )
+            name: "HevSocks5TunnelC",
+            path: "Sources/HevSocks5TunnelC",
+            publicHeadersPath: "include",
+            cSettings: [
+                .headerSearchPath("include")
+            ]
+        )
   ]
 )
