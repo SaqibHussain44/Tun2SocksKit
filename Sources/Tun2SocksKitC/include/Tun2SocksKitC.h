@@ -2,7 +2,7 @@
 #define Tun2SocksKitC_H
 
 // Expose hev-socks5 C functions to Swift
-#include "../HevSocks5TunnelC/include/hev-socks5-tunnel.h"
+#include "hev_socks5_tunnel_shim.h"
 
 #include <stdint.h>
 
