@@ -14,44 +14,42 @@ let package = Package(
             targets: ["Tun2SocksKitC"]
         )
     ],
-    targets: [
-        
-        // MARK: Swift Tunnel Wrapper
-        .target(
-            name: "Tun2SocksKit",
-            dependencies: ["Tun2SocksKitC"]
-        ),
+  targets: [
 
-        // MARK: C Wrapper for Swift
-        .target(
-            name: "Tun2SocksKitC",
-            dependencies: ["HevSocks5TunnelC"],
-            publicHeadersPath: "include",
-            cSettings: [
-                .headerSearchPath("include")
-            ]
-        ),
+         // MARK: Swift wrapper
+         .target(
+             name: "Tun2SocksKit",
+             dependencies: ["Tun2SocksKitC"]
+         ),
 
-        // MARK: HevSocks5Tunnel XCFramework Wrapper
-        .target(
-            name: "HevSocks5TunnelC",
-            path: "Sources/HevSocks5TunnelC",
-            publicHeadersPath: "include",
-            cSettings: [
-                .headerSearchPath("include"),
+         // MARK: C wrapper bridging header → Swift
+         .target(
+             name: "Tun2SocksKitC",
+             dependencies: [
+                 .target(name: "HevSocks5TunnelC")
+             ],
+             path: "Sources/Tun2SocksKitC",
+             publicHeadersPath: "include",
+             cSettings: [
+                 .headerSearchPath("include"),
+                 .headerSearchPath("../HevSocks5TunnelC/include")
+             ]
+         ),
 
-                // XCFramework headers (DEVICE)
-                .headerSearchPath("HevSocks5Tunnel.xcframework/ios-arm64/Headers"),
-
-                // XCFramework headers (SIMULATOR)
-                .headerSearchPath("HevSocks5Tunnel.xcframework/ios-arm64_x86_64-simulator/Headers")
-            ],
-            linkerSettings: [
-                .unsafeFlags([
-                    "-framework", "HevSocks5Tunnel",
-                    "-F", "Sources/HevSocks5TunnelC/HevSocks5Tunnel.xcframework"
-                ])
-            ]
-        )
-    ]
+         // MARK: XCFramework wrapper
+         .target(
+             name: "HevSocks5TunnelC",
+             path: "Sources/HevSocks5TunnelC",
+             publicHeadersPath: "include",
+             cSettings: [
+                 .headerSearchPath("include"),
+             ],
+             linkerSettings: [
+                 .unsafeFlags([
+                     "-framework", "HevSocks5Tunnel",
+                     "-F", "Sources/HevSocks5TunnelC/HevSocks5Tunnel.xcframework"
+                 ])
+             ]
+         )
+     ]
 )
