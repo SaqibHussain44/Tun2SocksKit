@@ -1,3 +1,5 @@
+#include "../HevSocks5TunnelC/include/hev-socks5-tunnel.h"
+
 #ifndef Tun2SocksKitC_H
 #define Tun2SocksKitC_H
 

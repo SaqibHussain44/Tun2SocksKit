@@ -1,6 +1,5 @@
 import Foundation
 import Tun2SocksKitC
-import HevSocks5Tunnel
 
 public enum Socks5Tunnel {
 
